@@ -4,7 +4,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - grok_data:/app/data
+      - ./data:/app/data
       - ./logs:/app/logs
     environment:
       # =====存储模式: file, mysql 或 redis=====
