@@ -1,6 +1,9 @@
 services:
   grok2api:
-    image: ghcr.io/chenyme/grok2api:latest
+    # image: ghcr.io/chenyme/grok2api:latest
+    build:
+      context: .                # 构建上下文：当前目录（your-project/）
+      dockerfile: Dockerfile    # 指定 Dockerfile 文件名（默认就是 Dockerfile，可省略）
     ports:
       - "8000:8000"
     volumes:
@@ -15,5 +18,3 @@ services:
       ## MySQL格式: mysql://user:password@host:port/database
       ## Redis格式: redis://host:port/db 或 redis://user:password@host:port/db
 
-volumes:
-  grok_data:
